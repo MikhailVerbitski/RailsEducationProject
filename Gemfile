@@ -18,8 +18,18 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'sprockets-rails', '>= 2.3.2'
 gem 'jquery-rails', '>= 3.1.0'
 gem 'popper_js', '< 2'
-
 gem 'yard'
+# required
+gem 'enumerize', '~> 2.5.0'
+gem 'cancancan', '~> 3.3.0'
+gem 'state_machines', '~> 0.5.0'
+gem 'rspec', '~> 3.10.0'
+gem 'simple_form', '~> 5.1.0'
+gem 'nested_form', '~> 0.3.2'
+gem 'pagy', '~> 5.6.6'
+gem 'ransack', '~> 2.5.0'
+gem 'devise', '~> 4.8.1'
+gem 'whenever', '~> 1.0.0'
 
 group :development, :test do
     gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
