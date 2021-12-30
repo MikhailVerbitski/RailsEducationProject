@@ -1,0 +1,39 @@
+version: '0.1'
+
+services:
+  postgres:
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      # - $HOME/postgres-data:/var/lib/postgresql
+      - $PWD/tmp/sockets:/var/run/postgresql
+    image: postgres:14.1
+    user: postgres
+    environment:
+      - PGUSER=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=education_project_ads_development
+    healthcheck:
+      test: ["CMD", "pg_isready -U $POSTGRES_USER"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    restart: always
+  web:
+    container_name: web
+    build: .
+    ports:
+      - "3000:3000"
+    command: /bin/sh -c "rails s -b 0.0.0.0 -p 3000"
+    links:
+      - postgres
+    volumes:
+      - $PWD/tmp/sockets:/var/run/postgresql
+    environment:
+      - DATABASE_PORT=5432
+      - EDUCATION_PROJECT_ADS_DATABASE_PASSWORD=mysecretpassword
+      - RAILS_ENV=development
+      - RACK_ENV=development
+      # - DATABASE_URL:postgres://user:pass@postgres:5432/datex_dev?pool=5&encoding=utf-8
