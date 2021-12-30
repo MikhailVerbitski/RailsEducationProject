@@ -1,0 +1,41 @@
+@import "bootstrap";
+
+* { padding: 0; margin: 0; }
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+#fullheight {
+    width: 250px;
+    background: blue;
+}
+
+.area_grid {
+  display: grid;
+  grid-template-columns: repeat(8, 11%);
+  grid-template-rows: 100%;
+  grid-row-gap: 6px;
+  grid-column-gap: 6px;
+  height: 100%;
+}
+
+.featur_item {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: aquamarine;
+  padding: 6px 10px;
+}
+
+.featur_grid {
+  margin: 20px;
+}
+
+.users_grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(6, 40px);
+  grid-row-gap: 8px;
+  grid-column-gap: 6px;
+  height: 100%;
+}
