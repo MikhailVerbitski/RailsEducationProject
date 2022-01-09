@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'persons/profile'
+  root to: 'posts#index'
+  get 'persons/profile', as: 'user_root'
+
   get 'posts/new'
   get 'posts/create'
   get 'posts/update'

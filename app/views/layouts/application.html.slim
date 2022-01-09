@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Foundation
+    title Ads
     = csrf_meta_tags
     = csp_meta_tag
     
@@ -9,4 +9,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/navbar'
+    div.notice
+      - notice
+    div.alert
+      - alert
     = yield

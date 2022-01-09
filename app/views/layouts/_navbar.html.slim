@@ -22,29 +22,29 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           a.dropdown-item href="#"  Something else here
       li.nav-item
         a.nav-link.disabled href="#"  Disabled
-    form.form-inline.my-2.my-lg-0
-      input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
-      button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
+    / form.form-inline.my-2.my-lg-0
+    /   input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
+    /   button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
     .nav-item.dropdown
-      - if session[:user_id]
+      - if user_signed_in?
         a.nav-item.nav-link.dropdown-toggle.user-action data-toggle="dropdown" href="#" 
-          img.avatar alt="Avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" /
-        .dropdown-menu
-          a.dropdown-item href="#" 
-            | Profile
-          a.dropdown-item href="#" 
-            | Calendar
-          a.dropdown-item href="#" 
-            | Settings
-          .divider.dropdown-divider
-          a.dropdown-item href="/logout" 
-            | Logout
+          img.avatar alt="Avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+          - current_user.email
+        ul.navbar-nav.mr-auto
+          .dropdown-menu.dropdown-menu-right
+            li.dropdown-item
+              = link_to 'Profile', persons_profile_path, :class => 'navbar-link'
+            li.dropdown-item
+              = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+            li.dropdown-item
+              = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
       - else
         ul.navbar-nav.mr-auto
-          li.nav-item
-            a.nav-link href="/login" 
-              | sign in
-          li.nav-item
-            a.nav-link href="/registration" 
-              | registration
+          a.nav-item.nav-link.dropdown-toggle.user-action data-toggle="dropdown" href="#" 
+            img.avatar alt="Avatar" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+          .dropdown-menu.dropdown-menu-right
+            li.dropdown-item
+              = link_to 'Sign in', new_user_session_path, :class => 'navbar-link'
+            li.dropdown-item
+              = link_to 'Registration', new_user_registration_path, :class => 'navbar-link'
 
