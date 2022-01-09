@@ -14,9 +14,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link href="#"  Link
       li.nav-item.dropdown
         a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-          | Dropdown
+          | Posts
         .dropdown-menu aria-labelledby="navbarDropdown" 
-          a.dropdown-item href="#"  Action
+          div.dropdown-item
+            = link_to 'New post', posts_new_path, :class => 'navbar-link'
           a.dropdown-item href="#"  Another action
           .dropdown-divider
           a.dropdown-item href="#"  Something else here

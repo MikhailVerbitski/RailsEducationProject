@@ -13,6 +13,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'slim'
 gem 'pry'
+gem 'pry-byebug'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.2.1'
 gem 'sprockets-rails', '>= 2.3.2'

@@ -143,6 +143,9 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry-byebug (3.8.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     public_suffix (4.0.6)
     puma (3.12.6)
     racc (1.6.0)
@@ -308,6 +311,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   popper_js (< 2)
   pry
+  pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.6)
   ransack (~> 2.5.0)
