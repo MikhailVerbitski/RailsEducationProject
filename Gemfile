@@ -30,7 +30,8 @@ gem 'pagy', '~> 5.6.6'
 gem 'ransack', '~> 2.5.0'
 gem 'devise', '~> 4.8.1'
 gem 'whenever', '~> 1.0.0'
-gem 'rubocop'
+gem 'rubocop', '~> 1.24.0'
+gem 'html2slim', '~> 0.2.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
