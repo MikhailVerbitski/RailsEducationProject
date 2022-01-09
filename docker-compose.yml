@@ -38,6 +38,6 @@ services:
       - EDUCATION_PROJECT_ADS_DATABASE_PASSWORD=mysecretpassword
       - RAILS_ENV=development
       - RACK_ENV=development
-      - MAIL_HOST='gmail.com'
+      - MAIL_HOST='localhost:3000'
       - SENDMAIL_USERNAME='itnews68@gmail.com'
       - SENDMAIL_PASSWORD=ItNews123456
