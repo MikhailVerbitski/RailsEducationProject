@@ -8,7 +8,8 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     elsif user.role == 'guest'
-      can :read, :all
+      can :manage, :all
+      # can :read, :all
     else
       can :manage, Post, user_id: user.id
       can :read, :all
