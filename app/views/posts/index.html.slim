@@ -1,6 +1,9 @@
+link href="/assets/posts.scss" rel="stylesheet" /
+
 - @posts.each do |post|
   .wrapper
-    div
+    .shadow
       = image_tag post.body[/http.+png|jpg/]
-      span.overlay-text
-        = markdown_text_only(post.body)
+      = link_to post_path(post)
+        span.overlay-text
+          = markdown_text_only(post.body)

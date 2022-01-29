@@ -13,28 +13,9 @@ html, body, #fullheight {
     background: blue;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
-  grid-auto-rows: 240px;
-  padding: 1em;
-}
-
-.wrapper > div {
-  position: relative;
-  background-color: F8F9FA;
+.shadow {
+  background-color: #F8F9FA;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  overflow: hidden;
-}
-
-.wrapper div img {
-  opacity: 0.8;
-  width: 100%;
-}
-
-.wrapper div img, .overlay-text {
-  position: absolute;
 }
 
 .overlay-text {

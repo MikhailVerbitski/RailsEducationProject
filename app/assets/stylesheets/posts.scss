@@ -67,3 +67,29 @@
   top: 0;
   right: 0;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: 240px;
+  padding: 1em;
+}
+
+.wrapper > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper div img {
+  opacity: 0.8;
+  width: 100%;
+}
+
+.wrapper div img, .overlay-text {
+  position: absolute;
+}
+
+.post-body {
+  padding: 18px;
+}
