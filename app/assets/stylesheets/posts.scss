@@ -53,3 +53,17 @@
   -moz-opacity: 0.0;
   /* FF lt 1.5, Netscape */
 }
+
+.post_body-preview-container {
+  padding: 2px 24px;
+}
+
+.save-button-wrapper {
+  position: relative;
+}
+
+.save-button-wrapper button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

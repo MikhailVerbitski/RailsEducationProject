@@ -1,10 +1,15 @@
-/ = stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload'
-<link rel="stylesheet" href="/assets/posts.scss"> 
+link href="/assets/posts.scss" rel="stylesheet" /
 
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
-
-textarea#comment-md name="comment" placeholder=("Say something...") 
-br/
-#comment-md-preview-container
-#comment-md-preview.well.well-sm.well-light.md-preview.margin-top-10
+.container
+  = form_with model: @post, class: "", local: true do |f|
+    .row.justify-content-md-center
+      .col-md-12
+        h1 Editor
+        br/
+        textarea#post_body name="post[body]" placeholder=("Say something...")
+        br/
+        #post_body-preview-container.border.rounded
+          #post_body-preview.well.well-sm.well-light.md-preview.margin-top-10
+    br/
+    #saveButton.text-right
+      button.btn.btn-primary name="button" type="submit"  Save

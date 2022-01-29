@@ -20,3 +20,5 @@
 //= require bootstrap
 
 //= require bootstrap-markdown
+
+//= require font_awesome5

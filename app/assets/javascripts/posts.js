@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   $(function() {
-    var $previewContainer = $('#comment-md-preview-container');
+    var $previewContainer = $('#post_body-preview-container');
+    var $saveButton = $('#saveButton');
     $previewContainer.hide();
-    var $md = $("#comment-md").markdown({
+    var $md = $("#post_body").markdown({
       autofocus: false,
       height: 270,
       iconlibrary: 'fa',
@@ -12,8 +13,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
       onChange: function(e) {
         var content = e.parseContent();
-        if (content === '') $previewContainer.hide();
-        else $previewContainer.show().find('#comment-md-preview').html(content).find('table').addClass('table table-bordered table-striped table-hover');
+        if (content === '') {
+          $previewContainer.hide();
+          $saveButton.hide();
+        } else {
+          $previewContainer.show().find('#post_body-preview').html(content).find('table').addClass('table table-bordered table-striped table-hover');
+          $saveButton.show();
+        }
       },
       footer: function(e) {
         return '\
@@ -37,11 +43,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var $mdEditor = $('.md-editor'),
       msgs = {};
 
+    $mdEditor.addClass('rounded')
+
     $mdEditor.find('[data-md-footer-message]').each(function() {
       msgs[$(this).data('md-footer-message')] = $(this).hide();
     });
-    msgs.
-    default.show();
+    msgs.default.show();
     $mdEditor.filedrop({
       binded_input: $('#comment-images'),
       url: "static-uploads.php",

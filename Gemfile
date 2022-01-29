@@ -33,6 +33,7 @@ gem 'devise', '~> 4.8.1'
 gem 'whenever', '~> 1.0.0'
 gem 'rubocop', '~> 1.24.0'
 gem 'html2slim', '~> 0.2.0'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
