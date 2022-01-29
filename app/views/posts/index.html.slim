@@ -1,8 +1,6 @@
-.area_grid
-  .featur_grid.users_grid
-    .featur_item
-      | hi
-    .featur_item
-      | hi
-    .featur_item
-      | hi
+- @posts.each do |post|
+  .wrapper
+    div
+      = image_tag post.body[/http.+png|jpg/]
+      span.overlay-text
+        = markdown_text_only(post.body)
