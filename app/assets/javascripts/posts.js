@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     msgs.default.show();
     $mdEditor.filedrop({
       binded_input: $('#comment-images'),
-      url: "static-uploads.php",
+      url: "/file/create",
       fallbackClick: false,
       beforeSend: function(file, i, done) {
         msgs.
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         msgs.loading.show();
         done();
       },
-      //maxfilesize: 15,
       error: function(err, file) {
         switch (err) {
           case 'BrowserNotSupported':
@@ -92,8 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         msgs.err.hide();
       },
       uploadFinished: function(i, file, response, time) {
-        $md.val($md.val() + "![" + file.name + "](http://photography.naturestocklibrary.com/orca-stock-photo.jpg)\n").trigger('change');
-        // response is the data you got back from server in JSON format.
+        $md.val($md.val() + "![" + file.name + `](http://localhost:3000/file/show?name=${file.name})\n`).trigger('change');
       }
     });
   })

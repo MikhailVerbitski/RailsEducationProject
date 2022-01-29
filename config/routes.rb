@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get 'posts/destroy'
   get 'posts/show'
   get 'posts', to: 'posts#index'
+
+  post 'file/create'
+  get 'file/show'
 end
