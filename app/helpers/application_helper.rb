@@ -8,4 +8,8 @@ module ApplicationHelper
     html = markdown(text)
     Nokogiri::HTML.parse(html).text
   end
+
+  def current_theme
+    current_user.theme || 'black'
+  end
 end

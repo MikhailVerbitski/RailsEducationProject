@@ -1,0 +1,58 @@
+link href="/assets/persons.scss" rel="stylesheet" /
+
+.container.bg-white.mt-5.mb-5
+  .row.second-color.rounded.shadow
+    .col-md-3.border-right
+      .d-flex.flex-column.align-items-center.text-center.p-3.py-5
+        img.rounded-circle.mt-5 src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU" /
+        span.font-weight-bold Amelly
+        span.text-black-50 amelly12@bbb.com
+        span
+    .col-md-5.border-right
+      .p-3.py-5
+        .d-flex.justify-content-between.align-items-center.mb-3
+          h4.text-right Profile Settings
+        .row.mt-2
+          .col-md-6
+            label.labels Name
+            input.form-control placeholder=("first name") type="text" value="" /
+          .col-md-6
+            label.labels Surname
+            input.form-control placeholder="surname" type="text" value="" /
+        .row.mt-3
+          .col-md-12
+            label.labels PhoneNumber
+            input.form-control placeholder=("enter phone number") type="text" value="" /
+          .col-md-12
+            label.labels Address
+            input.form-control placeholder=("enter address") type="text" value="" /
+          .col-md-12
+            label.labels Email ID
+            input.form-control placeholder=("enter email id") type="text" value="" /
+          .col-md-12
+            label.labels Education
+            input.form-control placeholder="education" type="text" value="" /
+        .row.mt-3
+          .col-md-6
+            label.labels Country
+            input.form-control placeholder="country" type="text" value="" /
+          .col-md-6
+            label.labels State/Region
+            input.form-control placeholder="state" type="text" value="" /
+        .mt-5.text-center
+          button.btn.btn-primary.profile-button type="button"  Save Profile
+    .col-md-4
+      .p-3.py-5
+        .d-flex.justify-content-between.align-items-center.experience
+          span Edit Experience
+          span.border.px-3.p-1.add-experience
+            i.fa.fa-plus
+            | \&nbsp;Experience
+        br/
+        .col-md-12
+          label.labels Experience in Designing
+          input.form-control placeholder="experience" type="text" value="" /
+        br/
+        .col-md-12
+          label.labels Additional Details
+          input.form-control placeholder=("additional details") type="text" value="" /
