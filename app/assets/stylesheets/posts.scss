@@ -82,14 +82,25 @@
 }
 
 .wrapper div img {
-  opacity: 0.8;
   width: 100%;
+  opacity: 0.4;
 }
 
 .wrapper div img, .overlay-text {
   position: absolute;
 }
 
+.radius {
+  border-radius: 8px;
+}
+
 .post-body {
   padding: 18px;
+}
+
+.card-overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 1)
+  );
 }

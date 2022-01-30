@@ -1,15 +1,16 @@
 link href="/assets/posts.scss" rel="stylesheet" /
 
 .container
-  = form_with model: @post, class: "", local: true do |f|
-    .row.justify-content-md-center
-      .col-md-12
-        h1 Editor
-        br/
-        textarea#post_body name="post[body]" placeholder=("Say something...")
-        br/
-        #post_body-preview-container.border.rounded
-          #post_body-preview.well.well-sm.well-light.md-preview.margin-top-10
-    br/
-    #saveButton.text-right
-      button.btn.btn-primary name="button" type="submit"  Save
+  .post-body.radius.shadow.second-color
+    = form_with model: @post, class: "", local: true do |f|
+      .row.justify-content-md-center
+        .col-md-12
+          h1 Editor
+          br/
+          textarea#post_body name="post[body]" placeholder=("Say something...")
+          br/
+          #post_body-preview-container.border.rounded
+            #post_body-preview.well.well-sm.well-light.md-preview.margin-top-10
+      br/
+      #saveButton.text-right
+        button.btn.btn-primary name="button" type="submit"  Save

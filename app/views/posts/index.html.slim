@@ -2,7 +2,7 @@ link href="/assets/posts.scss" rel="stylesheet" /
 
 - @posts.each do |post|
   .wrapper
-    .shadow
+    .shadow.card-overlay.radius
       = image_tag post.body[/http.+png|jpg/]
       = link_to post_path(post)
         span.overlay-text

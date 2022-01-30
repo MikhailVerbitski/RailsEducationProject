@@ -14,10 +14,12 @@ html
     script src="https://rawgit.com/lodev09/jquery-filedrop/master/jquery.filedrop.js" 
     script src="https://rawgit.com/jeresig/jquery.hotkeys/master/jquery.hotkeys.js" 
   body
-    = render 'layouts/navbar'
-    p.notice
-      = notice
-    p.alert
-      = alert
-    = yield
+    .main-content.main-color
+      = render 'layouts/navbar'
+      .alert.alert-success role="alert"
+        = notice
+      .alert.alert-danger role="alert"
+        = alert
+      .dynamic-content
+        = yield
     = render 'layouts/footer'

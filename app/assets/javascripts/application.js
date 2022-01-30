@@ -22,3 +22,9 @@
 //= require bootstrap-markdown
 
 //= require font_awesome5
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  let hideElement = function (pattern) { $(pattern).hide() }
+  alertTimeoutId = setTimeout(hideElement, 3000, '.alert-danger');
+  warningTimeoutId = setTimeout(hideElement, 3000, '.alert-success');
+});

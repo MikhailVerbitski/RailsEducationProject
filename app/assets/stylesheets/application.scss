@@ -13,9 +13,26 @@ html, body, #fullheight {
     background: blue;
 }
 
-.shadow {
+.main-color {
+  background-color: white;
+}
+
+.second-color {
+  background-color: #d9d9d99e;
+}
+
+.site-panel-color {
   background-color: #F8F9FA;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dynamic-content {
+  padding: 24px 10px;
+}
+
+.main-content {
+  min-height: 96%;
+  overflow: auto;
+  text-align: justify;
 }
 
 .overlay-text {
@@ -38,13 +55,18 @@ html, body, #fullheight {
 .alert {
   padding: 0;
   margin: 0;
+  border: 0px solid transparent;
+  text-align: center;
 }
 
 .site-footer {
-  position: fixed;
   bottom: 0;
+  color: #707070;
+  height: 2em;
   left: 0;
-  right: 0;
+  position: static;
+  font-size: small;
+  width:100%;
 }
 
 [class^="border"] {
