@@ -6,6 +6,12 @@ class PostsController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
+  def show
+  end
+
   def create
     if @post.save
       redirect_to @post
@@ -22,15 +28,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def destroy
     @post.delete
     redirect_to root_url, notice: 'Post deleted'
-  end
-
-  def show
   end
 
   def index
