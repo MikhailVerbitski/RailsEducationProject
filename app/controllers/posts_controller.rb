@@ -3,14 +3,10 @@ class PostsController < ApplicationController
 
   load_and_authorize_resource
 
-  def new
-  end
-
-  def edit
-  end
-
-  def show
-  end
+  # Just views
+  def new; end
+  def edit; end
+  def show; end
 
   def create
     if @post.save
