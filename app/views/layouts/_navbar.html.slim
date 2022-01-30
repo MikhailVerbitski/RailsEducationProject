@@ -7,25 +7,13 @@ nav.navbar.navbar-expand-lg.navbar-light.site-panel-color
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        a.nav-link href="" 
-          | Home
+        a.nav-link href="/posts/new"
+          | Create new Post!
           span.sr-only (current)
       li.nav-item
-        a.nav-link href="#"  Link
-      li.nav-item.dropdown
-        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-          | Posts
-        .dropdown-menu aria-labelledby="navbarDropdown" 
-          div.dropdown-item
-            = link_to 'New post', posts_new_path, :class => 'navbar-link'
-          a.dropdown-item href="#"  Another action
-          .dropdown-divider
-          a.dropdown-item href="#"  Something else here
-      li.nav-item
-        a.nav-link.disabled href="#"  Disabled
-    / form.form-inline.my-2.my-lg-0
-    /   input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
-    /   button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
+        label#switch.switch
+          input#slider onchange="toggleTheme()" type="checkbox" /
+          span.slider.round
     .nav-item.dropdown
       - if user_signed_in?
         a.nav-item.nav-link.dropdown-toggle.user-action data-toggle="dropdown" href="#" 
@@ -35,8 +23,6 @@ nav.navbar.navbar-expand-lg.navbar-light.site-panel-color
           .dropdown-menu.dropdown-menu-right
             li.dropdown-item
               = link_to 'Profile', persons_profile_path, :class => 'navbar-link'
-            li.dropdown-item
-              = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
             li.dropdown-item
               = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
       - else
@@ -48,4 +34,3 @@ nav.navbar.navbar-expand-lg.navbar-light.site-panel-color
               = link_to 'Sign in', new_user_session_path, :class => 'navbar-link'
             li.dropdown-item
               = link_to 'Registration', new_user_registration_path, :class => 'navbar-link'
-
