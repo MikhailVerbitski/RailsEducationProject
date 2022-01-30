@@ -15,12 +15,19 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(create_params)
+      redirect_to @post
+    else
+      flash.alert = "Can't Update!"
+    end
   end
 
   def edit
   end
 
   def destroy
+    @post.delete
+    redirect_to root_url, notice: 'Post deleted'
   end
 
   def show

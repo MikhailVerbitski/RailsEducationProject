@@ -1,5 +1,8 @@
 link href="/assets/posts.scss" rel="stylesheet" /
 
 .container
-  .post-body.radius.shadow.second-color
+  .second-color.post-body.radius.shadow
     = markdown(@post.body)
+  .buttons-wrapper.second-color.post-body.radius.shadow
+    = link_to "Delete", post_path(@post), class: "btn btn-primary", method: :delete, style: "grid-column-start: 9;"
+    = link_to 'Update', edit_post_path(@post), class: 'btn btn-primary', style: "grid-column-start: 10;"

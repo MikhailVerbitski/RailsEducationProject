@@ -96,6 +96,7 @@
 
 .post-body {
   padding: 18px;
+  margin: 24px 0px 10px 0px;
 }
 
 .card-overlay {
@@ -103,4 +104,10 @@
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 1)
   );
+}
+
+.buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 1em;
 }
