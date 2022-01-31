@@ -3,6 +3,7 @@ link href="/assets/posts.scss" rel="stylesheet" /
 .container
   .col-12.second-color.rounded.shadow
     = markdown(@post.body)
-  .col-12.buttons-wrapper.second-color.rounded.shadow
-    = link_to "Delete", post_path(@post), class: "btn btn-primary", method: :delete, style: "grid-column-start: 9;"
-    = link_to 'Update', edit_post_path(@post), class: 'btn btn-primary', style: "grid-column-start: 10;"
+  - if can?(:destroy, @post) && can?(:update, @post)
+    .col-12.buttons-wrapper.second-color.rounded.shadow
+      = can?(:destroy, @post) ? link_to("Delete", post_path(@post), class: "btn btn-primary", method: :delete, style: "grid-column-start: 9;") : ''
+      = can?(:update, @post)  ? link_to('Update', edit_post_path(@post), class: 'btn btn-primary', style: "grid-column-start: 10;") : ''

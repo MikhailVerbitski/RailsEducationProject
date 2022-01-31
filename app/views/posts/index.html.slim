@@ -3,7 +3,7 @@ link href="/assets/posts.scss" rel="stylesheet" /
 .wrapper
   - @posts.each do |post|
     .shadow.card-overlay.rounded
-      = image_tag post.body[/http.+png|jpg/]
+      = image_tag markdown_find_images(post.body).first
       = link_to post_path(post)
         span.overlay-text
-          = markdown_text_only(post.body)
+          = markdown_without_link(post.body)

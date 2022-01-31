@@ -1,12 +1,17 @@
 module ApplicationHelper
   def markdown(text)
-    options = %i[hard_wrap autolink no_intra_emphasis]
-    Markdown.new(text, *options).to_html.html_safe
+    Markdown.new(text, %i[hard_wrap autolink no_intra_emphasis]).to_html.html_safe
   end
 
-  def markdown_text_only(text)
+  def markdown_without_link(text)
     html = markdown(text)
-    Nokogiri::HTML.parse(html).text
+    doc = Nokogiri::HTML.fragment(html)
+    doc.search('//a').remove
+    doc.xpath("*").first(2).map(&:to_html).join.html_safe
+  end
+
+  def markdown_find_images(text)
+    (text.scan(/data:[^"]+/) + text.scan(/(http[^"]+(png|jpg|"))/).flatten.map { |i| i.gsub('"', '') }).flatten
   end
 
   def current_theme
